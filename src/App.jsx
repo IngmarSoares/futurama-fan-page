@@ -4,9 +4,9 @@ import './App.css'
 
 fetch('/api')
   .then(resp => resp.json())
-  .then(data => console.log(JSON.stringify(data, null, 2)));
+  .then(data => console.log(JSON.stringify(data)));
 
-  
+  console.log('hello')
 
 function App() {
 
@@ -14,7 +14,7 @@ function App() {
   
   return (
     <div className="App">
-      <h1> </h1>
+      <h1> hello </h1>
     </div>
   )
 }
