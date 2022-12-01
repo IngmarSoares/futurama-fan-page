@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 
 
-function App() {
+function Info() {
   let [info,setInfo] = useState('')
   
   useEffect(() => {
@@ -17,10 +16,11 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <h1> {info} </h1>
-    </div>
+    <>
+      <h1> Synopsis </h1>
+      <h3> {info}   </h3>
+    </>
   )
 }
 
-export default App
+export default Info

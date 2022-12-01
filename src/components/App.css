@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Futurama';
-  src: url('./fonts/fr-bold.ttf') format('truetype');
+  src: url('../fonts/fr-bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'FuturamaTitle';
-  src: url('./fonts/fr-bold.ttf') format('truetype');
+  src: url('../fonts/fr-bold.ttf') format('truetype');
 }
 
 h1 {

@@ -1,0 +1,20 @@
+.episode-list{
+  background-color: rgb(107, 214, 81);
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+
+.episode {
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  background-color: darkorange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 4px solid rgb(43, 151, 66);
+  padding: 40px;
+  margin: 6px;
+
+}
