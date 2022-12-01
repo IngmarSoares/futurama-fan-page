@@ -6,9 +6,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': {
-        target: 'https://api.sampleapis.com/futurama/info',
+      '/futurama': {
+        target: 'https://api.sampleapis.com',
         changeOrigin: true,
+        secure: false,
+        ws: true,
         rewrite: (path) => { console.log(path); return path.replace('/^\/api/', '') }
       }
     }

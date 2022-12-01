@@ -1,20 +1,24 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 
-fetch('/api')
-  .then(resp => resp.json())
-  .then(data => console.log(JSON.stringify(data, null, 2)));
-
-  
-
 function App() {
-
-
+  let [info,setInfo] = useState('')
   
+  useEffect(() => {
+    const fetchData = async (url) => {
+      const response = await fetch(url);
+      const json = await response.json();
+      setInfo(JSON.stringify(json[0]['synopsis']));
+    }
+  
+    fetchData('/futurama/info')
+      .catch(console.error);;
+  }, [])
+
   return (
     <div className="App">
-      <h1> </h1>
+      <h1> {info} </h1>
     </div>
   )
 }
