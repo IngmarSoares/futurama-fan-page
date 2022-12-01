@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import ('./Episodes.css')
+import ('./css/Episodes.css')
 
 
 function Episodes() {
