@@ -1,0 +1,17 @@
+.navbar {
+  height: 1.9rem;
+  background-color: rgb(211, 214, 63);
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.nav-bar-link {
+  text-decoration: none;
+  padding: 0 6rem;
+  color: rgb(245, 0, 0);
+}
