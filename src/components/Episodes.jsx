@@ -2,22 +2,11 @@ import { useState, useEffect } from 'react'
 import ('./css/Episodes.css')
 
 
-function Episodes() {
-  let [episodes,setEpisodes] = useState('')
-  
-  useEffect(() => {
-    const fetchData = async (url) => {
-      const response = await fetch(url);
-      const json = await response.json();
-      setEpisodes(json);
-    }
-  
-    fetchData('/futurama/episodes')
-      .catch(console.error);;
-  }, [])
-
+function Episodes(props) {
+  let [episodes,setEpisodes] = useState(null)
+ 
   let arrObjects = []
-  Object.values(episodes).forEach((subobject) => { 
+  Object.values(props.json).forEach((subobject) => { 
     arrObjects.push(subobject)
   })
   
