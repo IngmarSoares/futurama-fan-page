@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import './css/App.css'
+import './styles/App.css'
 import Characters from './Characters'
 import Episodes from './Episodes'
 import Info from './Info'
@@ -11,6 +11,7 @@ import NavBar from './NavBar'
 
 
 function App() {
+  console.log('App rendered')
   let [episodes,setEpisodes] = useState(null)
   let [info,setInfo] = useState(null)
   let [loading,setLoading] = useState(true)
@@ -36,7 +37,7 @@ function App() {
 
 
   if (loading) { 
-    return <img src='../../public/bender-loading.gif '/>}
+    return <img src='/bender-loading.gif '/>}
   else return (
     <div className="App">
       

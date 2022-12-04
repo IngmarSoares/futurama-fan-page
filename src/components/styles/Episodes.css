@@ -1,0 +1,58 @@
+
+.episode-list{
+  background-color: rgb(107, 214, 81);
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+}
+
+
+.episode {
+  height: auto;
+  width: 400px;
+  border-radius: 10%;
+  background-color: darkorange;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 4px solid rgb(43, 151, 66);
+  padding: 20px;
+  padding-bottom: 0;
+  margin: 10px;
+
+}
+
+.titleBar{
+  height: 70px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h1 {
+  padding-right: 30%;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error > img {
+  border-radius: 25%;
+  padding-bottom: 1rem;
+}
+.error > h1 {
+  padding: 0;
+}
+
+
+
+
+
+
