@@ -13,6 +13,7 @@ export default defineConfig({
         ws: true,
         rewrite: (path) => { console.log(path); return path.replace('/^\/api/', '') }
       }
-    }
+    },
+    host: true
   }
 })
