@@ -1,6 +1,12 @@
-function Home () {
+import ('./styles/Home.css')
+
+function Home() {
   return (
-    <h1>Home</h1>
+    <div className="home">
+      <h1>Home</h1>
+      <img src="public/futuramalogo.png" />
+    </div>
+    
   )
 }
 

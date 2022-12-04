@@ -44,7 +44,8 @@ function App() {
       <BrowserRouter>
       <NavBar />
         <Routes>
-          <Route path='/' element={ <Home /> } />
+          <Route index element={ <Home /> } />
+          <Route path='/home' element={ <Home /> } />
           <Route path='/info' element={ <Info json={info} />} />
           <Route path='/characters' element={ <Characters /> } />
           <Route path='/cast' element={ <Cast />}  />

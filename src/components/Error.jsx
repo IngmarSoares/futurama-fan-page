@@ -1,6 +1,10 @@
 function Error () {
   return (
-    <h1>Error</h1>
+    <div className="error">
+      <h1>Error 404 not found</h1>
+      <img src='/notfound.gif'/>
+    </div>
+
   )
 }
 
