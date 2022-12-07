@@ -1,0 +1,1 @@
+export const characterList = ['Philip J. Fry','Leela','Bender','Professor Farnsworth','Amy Wong','Hermes Conrad','Mom','Zoidberg','Zapp Brannigan','Lrrr','Scruffy','Cubert Farnsworth','Kif Kroker','Dwight Conrad','LaBarbara Conrad']

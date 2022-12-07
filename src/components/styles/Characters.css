@@ -1,0 +1,37 @@
+.titleBarCharacters {
+  display: flex;
+  align-items: center;
+}
+
+.titleBarCharacters > h1 {
+  padding-right: 23%;
+  padding-left: 3.5%;
+}
+.character-list > span {
+  padding: 0 0.2rem;
+  margin: 0.4rem 0.4rem;
+  border: 2px solid rgb(255, 200, 47);
+  background-color: aquamarine;
+  justify-content: center;
+  align-items: center;
+  
+}
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  height: 70px;
+}
+.characContainer > img {
+  width: 20%;
+  height: 20%;
+  justify-content: space-around;
+}
+.characContainer{
+  display: flex;
+  flex-direction: row;
+}
+.characterShow {
+  display: flex;
+  flex-direction: column;
+}

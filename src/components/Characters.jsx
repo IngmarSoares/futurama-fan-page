@@ -1,24 +1,55 @@
+import ('./styles/Characters.css')
 import { useState, useEffect } from 'react'
+import {characterList} from '../options/characters.js'
 
 
-function Characters() {
-  let [Characters,setCharacters] = useState('')
+function Characters(props) {
   
-  useEffect(() => {
-    const fetchData = async (url) => {
-      const response = await fetch(url);
-      const json = await response.json();
-      setCharacters(JSON.stringify(json[0]['synopsis']));
-    }
+  const [characters,setCharacters] = useState([])
+  const [characterToShow,setCharacterToShow] = useState(20)
+
+  useEffect (() => {
+    let arrCharacters = []
+    Object.values(props.json).forEach((subobject) => { 
+      arrCharacters.push(subobject)})
+    setCharacters(arrCharacters)  
+    setCharacterToShow(0) 
+    },[])
   
-    fetchData('/futurama/Characters')
-      .catch(console.error);;
-  }, [])
+  function changeCharacter(x){
+    setCharacterToShow(x)
+  }
 
   return (
     <>
-      <h1> Characters </h1>
-      <h3> {Characters}   </h3>
+      <div className='titleBarCharacters'>
+        <h1> Characters </h1>
+        <div className='character-list'>
+          {characterList.map((x,y)=>{
+            return (
+              <span key={y}onClick={() => changeCharacter(y)}>{x}</span>
+            )
+          })}
+        </div> 
+      </div> 
+      {characterToShow == 20? <h1>Choose a character to show!</h1> :<div className='characContainer'>
+        <img src={characters[characterToShow]['images']['main']} />
+        <div className='characterShow'>
+          <mark>FirstName:</mark> {characters[characterToShow]['name']['first']}
+          <mark>MiddleName:</mark> {characters[characterToShow]['name']['middle']}
+          <mark>LastName:</mark> {characters[characterToShow]['name']['last']}
+          <mark>Age:</mark> {characters[characterToShow]['age']}
+          <mark>Gender:</mark> {characters[characterToShow]['gender']}
+          <mark>Occupation:</mark>{characters[characterToShow]['occupation']}
+          <mark>Homeplanet:</mark>{characters[characterToShow]['homeplanet']} 
+          <mark>Species:</mark>{characters[characterToShow]['species']} 
+          <div className='sayings'>
+            {characters[characterToShow]['sayings'].map((x,y)=> {
+              return (<p key={y}>{x}</p>)
+            })}
+          </div>
+        </div>
+      </div>}
     </>
   )
 }

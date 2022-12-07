@@ -54,7 +54,7 @@ function Episodes(props) {
   return (
     <>
       
-      <div className='titleBar'>
+      <div className='titleBarEpisodes'>
         <h1> Episodes </h1>
         <h3>  Filter: </h3>
         <form id='filter'>
