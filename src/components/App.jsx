@@ -14,6 +14,7 @@ function App() {
   console.log('App rendered')
   let [episodes,setEpisodes] = useState(null)
   let [info,setInfo] = useState(null)
+  let [characters,setCharacters] = useState(null)
   let [loading,setLoading] = useState(true)
 
 
@@ -23,13 +24,15 @@ function App() {
     Promise.all([
       fetch('/futurama/info'),
       fetch('/futurama/episodes'),
+      fetch('/futurama/characters'),
     ])
-    .then(([resInfo, resEpisodes]) => 
-      Promise.all([resInfo.json(), resEpisodes.json()])
+    .then(([resInfo, resEpisodes, resCharacters]) => 
+      Promise.all([resInfo.json(), resEpisodes.json(), resCharacters.json()])
     )
-    .then(([dataInfo,dataEpisodes]) => {
+    .then(([dataInfo,dataEpisodes,dataCharacters]) => {
       setInfo(dataInfo);
       setEpisodes(dataEpisodes);
+      setCharacters(dataCharacters);
       setLoading(false)
     })
 
@@ -37,16 +40,17 @@ function App() {
 
 
   if (loading) { 
-    return <img src='/bender-loading.gif '/>}
+    return <img className='loading-img' src='/bender-loading.gif '/>}
   else return (
     <div className="App">
       
       <BrowserRouter>
       <NavBar />
         <Routes>
-          <Route path='/' element={ <Home /> } />
+          <Route index element={ <Home /> } />
+          <Route path='/home' element={ <Home /> } />
           <Route path='/info' element={ <Info json={info} />} />
-          <Route path='/characters' element={ <Characters /> } />
+          <Route path='/characters' element={ <Characters json={characters} /> } />
           <Route path='/cast' element={ <Cast />}  />
           <Route path='/episodes' element={ <Episodes json={episodes} /> } />
           <Route path='/*' element={ <Error /> } />
